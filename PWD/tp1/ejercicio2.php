@@ -24,7 +24,7 @@
                 <tr>
                     <td>Martes</td>
                     <td>Horas: <input type="number" class="neumorphic neumorphic-input" name="martes['hora]" id="horaMar">,
-                        minutos: <input type="number" class="neumorphic neumorphic-input" name="martes['minuto']" id="horaMar">
+                        minutos: <input type="number" class="neumorphic neumorphic-input" name="martes['minuto']" id="minMar">
                     </td>
                 </tr>
                 <tr>

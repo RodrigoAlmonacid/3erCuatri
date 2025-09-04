@@ -3,5 +3,11 @@ body{
 }
 
 .contenedor{
-    background: #ebefee;
+    background: #d6f5f5;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    border-radius: 5px;
+    border: solid #737a7a 1px;
+
 }

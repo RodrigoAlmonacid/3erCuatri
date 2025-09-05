@@ -21,7 +21,6 @@
         else{
             $cadena="<h2>No se recibieron datos</h2><br/>";
         }
-        echo $_POST['numForm'];
         return $cadena;
 }
 ?>  

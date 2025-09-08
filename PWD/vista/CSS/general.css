@@ -20,7 +20,6 @@ body{
 }
 
 .formulario {
-    background: #ffffff;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
@@ -30,21 +29,21 @@ body{
     width: 300px;          
 }
 
-.formulario h1 {
+.formulario h1, .formulario label{
     margin: 0;
     font-size: 20px;
     text-align: center;
     color: #333;
 }
 
-.formulario input[type="number"]{
+.formulario input[type="number"], .formulario input[type="text"]{
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 16px;
 }
 
-.formulario input[type="submit"], input[type="button"], button[type="button"] {
+.formulario input[type="submit"], .formulario input[type="button"], .formulario button[type="button"] {
     background: #4CAF50;
     color: white;
     border: none;
@@ -55,6 +54,6 @@ body{
     transition: background 0.3s ease;
 }
 
-.formulario input[type="submit"]:hover, input[type="button"]:hover, button[type="button"]:hover {
+.formulario input[type="submit"]:hover, .formulario input[type="button"]:hover, .formulario button:hover {
     background: #45a049;
 }

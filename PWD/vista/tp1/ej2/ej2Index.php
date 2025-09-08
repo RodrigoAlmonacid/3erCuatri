@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ejercio 2</title>
-    <link rel="stylesheet" href="../CSS/general.css">
+    <link rel="stylesheet" href="../../CSS/general.css">
 </head>
 <body>
     <div class="contenedor">
@@ -19,6 +19,6 @@
             <input type="submit" value="Enviar" id="bttEnviar" style="display:none;">
         </form>
     </div>
-    <script src="../JS/ej2.js"></script>
+    <script src="../../JS/ej2.js"></script>
 </body>
 </html>

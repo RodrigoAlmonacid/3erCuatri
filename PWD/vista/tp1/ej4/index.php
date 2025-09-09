@@ -8,7 +8,7 @@
 </head>
 <body>
     <div class="contenedor">
-        <form action="resultado.php" class="formulario" method="post">
+        <form action="resultado.php" class="formulario" method="get">
             <label for="nombre">Nombre:</label>
             <input type="text" name="nombre" maxlength="30" id="nombre" required>
             <label for="apellido">Apellido:</label>

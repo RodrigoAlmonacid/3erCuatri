@@ -1,12 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ejercicio 1</title>
-    <link rel="stylesheet" href="../../CSS/general.css">
+<!-- Inluye el header -->
+<?php
+    $title = "Ejercicio 1";
+    include_once('../../estructura/head.php')
+?>
+<!-- Espacio para incluir archivos js o css propios de esta vista -->
 </head>
 <body>
+    <!-- Incluye el menu -->
+    <?php
+    include_once '../../estructura/menu.php'
+    ?>
     <div class="contenedor">
         <form class="formulario" name="ej1" action="ej1Respuesta.php" method="post">
             <h1>Ingrese un número: </h1><input type="number" name="numForm" id="numForm" required><br>

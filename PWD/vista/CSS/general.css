@@ -1,35 +1,89 @@
 /* --- General --- */
 body {
     background: #edecec;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;   /* mejor que height fija */
     margin: 0;
     font-family: Arial, sans-serif;
     color: #333;
 }
 
-.header {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    width: 100%;
-    height: 20%;
+/* HEADER GENERAL */
+header {
+    width: 100%;                    /* ocupa todo el ancho */
+    height: 20vh;                   /* 20% de la altura de la pantalla */
+    max-height: 150px;              /* no pasa de esta altura */
+    min-height: 80px;               /* tampoco queda demasiado chiquito */
+    display: flex;                  /* activa flexbox */
+    background: #f4f4f4;            /* color de fondo (puedes cambiarlo) */
+    border-bottom: 2px solid #ccc;  /* separación visual */
+    box-sizing: border-box;
+    padding: 5px;
 }
 
+/* LOGO */
 .logo {
+    flex: 0 0 25%;                  /* ocupa aprox 25% del ancho fijo */
     display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    height: 100%;
+    justify-content: center;        /* centrado horizontal */
+    align-items: center;            /* centrado vertical */
+    margin-right: 10px;             /* pequeño margen de separación */
 }
 
-.logo img{
-    height: 100%;
-    max-height: 200px;
+.logo img {
+    height: 90%;                    /* ocupa casi todo el alto del header */
+    width: auto;                    /* mantiene proporciones */
+    object-fit: contain;            /* evita deformaciones */
+}
+
+/* CONTENEDOR DE TITULO Y MENU */
+.header-right {
+    flex: 1;                        /* ocupa el espacio restante */
+    display: flex;
+    flex-direction: column;         /* título arriba, menú abajo */
+    justify-content: space-between; /* reparte espacio vertical */
+}
+
+/* TITULO */
+.titulo {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: #333;
+}
+
+/* MENU */
+.menu {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;      /* menú alineado a la derecha */
+    align-items: center;
+    gap: 20px;
+    padding-right: 15px;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.menu a:hover {
+    color: #007BFF;                 /* color al pasar el mouse */
+}
+
+.menu ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 20px;
+}
+
+.menu li {
+    display: inline;
 }
 
 /* --- Contenedor principal --- */
@@ -44,6 +98,7 @@ body {
     max-width: 500px;
     width: 100%;
     box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    margin: 20px auto;
 }
 
 /* --- Formulario --- */
@@ -117,26 +172,4 @@ body {
     background: #45a049;
 }
 
-nav {
-  background-color: #a9af69;
-  padding: 10px;
-}
-
-nav ul {
-  list-style: none;
-  display: flex;
-  gap: 20px;
-  margin: 0;
-  padding: 0;
-}
-
-nav ul li a {
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-nav ul li a:hover {
-  text-decoration: underline;
-}
 

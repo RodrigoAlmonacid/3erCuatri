@@ -10,11 +10,15 @@
     <?php
     include_once '../../estructura/menu.php'
     ?>
-    <div class="contenedor">
-        <form class="formulario" name="ej1" action="ej1Respuesta.php" method="post">
-            <h1>Ingrese un número: </h1><input type="number" name="numForm" id="numForm" required><br>
-            <input type="submit" value="Enviar">
-        </form>
-    </div>
-</body> 
-</html>
+    <main>
+        <div class="contenedor">
+            <form class="formulario" name="ej1" action="ej1Respuesta.php" method="post">
+                <h1>Ingrese un número: </h1><input type="number" name="numForm" id="numForm" required><br>
+                <input type="submit" value="Enviar">
+            </form>
+        </div>
+    </main>
+<!-- Incluye footer -->
+<?php
+    include_once('../../estructura/footer.php')
+?>

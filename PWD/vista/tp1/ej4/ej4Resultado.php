@@ -4,6 +4,9 @@
     include_once('../../estructura/head.php')
 ?>
 <!-- Espacio para incluir archivos js o css propios de esta vista -->
+<?php
+include_once '../../../control/tp1/ej4DatosPersonales.php';
+?>
 </head>
 <body>
     <!-- Incluye el menu -->
@@ -12,10 +15,9 @@
     ?>
     <main>
         <div class="contenedor">
-            <form class="formulario" name="ej1" action="ej1Respuesta.php" method="post">
-                <h1>Ingrese un número: </h1><input type="number" name="numForm" id="numForm" required><br>
-                <input type="submit" value="Enviar">
-            </form>
+            <?php 
+                echo muestraDatos();
+            ?>
         </div>
     </main>
 <!-- Incluye footer -->

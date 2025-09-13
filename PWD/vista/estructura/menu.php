@@ -1,7 +1,7 @@
 <!-- menu comun -->
 <header>
     <div class="logo">
-        <img src="../../img/PWD.png" alt="logo">
+        <img src="/vista/img/PWD.png" alt="logo">
     </div>
     <div class="header-right">
         <div class="titulo">
@@ -10,8 +10,8 @@
         <div class="menu">
             <nav>
                 <ul>
-                    <li><a href="/3erCuatri/PWD/vista/estructura/inicioPwd.php">Inicio</a></li>
-                    <li><a href="tp1.php">TP 1</a></li>
+                    <li><a href="/vista/estructura/inicioPwd.php">Inicio</a></li>
+                    <li><a href="/vista/tp1/tp1Inicio.php">TP 1</a></li>
                     <li><a href="tp2.php">TP 2</a></li>
                     <li><a href="tp3.php">TP 3</a></li>
                 </ul>

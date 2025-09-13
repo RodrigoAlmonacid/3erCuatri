@@ -20,7 +20,13 @@
                 <li>Sanchez, Viviana</li>
                 <li>Carrasco Claudia</li>
                 <li>Juan Marcos Gonzalez</li>
-            </ul> 
+            </ul>
+            <div class="carpetas">
+                <h3>Acceso a trabajos prácticos</h3>
+                <div class="imagen"><a href="../tp1/tp1Inicio.php"><img src="../img/carpeta.png" alt="Imagen de carpeta"><h4>TP1</h4></a></div>
+                <div class="imagen"><a href="../tp3/tp3.php"><img src="../img/carpeta.png" alt="Imagen de carpeta"><h4>TP2</h4></a></div>
+                <div class="imagen"><a href="../tp3/tp3.php"><img src="../img/carpeta.png" alt="Imagen de carpeta"><h4>TP3</h4></a></div>
+            </div> 
         </div>    
     </main>
 

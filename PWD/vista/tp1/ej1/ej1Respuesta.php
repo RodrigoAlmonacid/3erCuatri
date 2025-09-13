@@ -1,21 +1,28 @@
+<!-- Inluye el header -->
 <?php
+    $title = "Ejercicio 1";
+    include_once('../../estructura/head.php')
+?>
+<!-- Espacio para incluir archivos js o css propios de esta vista -->
+ <?php
 include_once '../../../control/tp1/ej1VerNumero.php';
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Respuesta</title>
-    <link rel="stylesheet" href="../../CSS/general.css">
 </head>
 <body>
-    <div class="contenedor">
-        <h1>Respuesta</h1>
-        <?php 
-        echo verNumero();
-        ?>
-        <a href="ej1Index.php"><input type="button" value="Volver"></a>
-    </div>    
-</body>
-</html>
+    <!-- Incluye el menu -->
+    <?php
+    include_once '../../estructura/menu.php'
+    ?>
+    <main>
+        <div class="contenedor">
+            <h1>Respuesta</h1>
+            <?php 
+            echo verNumero();
+            ?>
+            <a href="ej1Index.php"><input type="button" value="Volver"></a>
+        </div>    
+    </main>
+<!-- Incluye footer -->
+<?php
+    include_once('../../estructura/footer.php')
+?>

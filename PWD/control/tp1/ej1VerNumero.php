@@ -1,7 +1,7 @@
 <?php
-    function verNumero(){
-        if (isset($_POST['numForm']) && $_POST['numForm'] != ""){
-            $numero = trim($_POST['numForm']);
+    function verNumero($datosForm){
+        if (isset($datosForm['numForm']) && $datosForm['numForm'] != ""){
+            $numero = trim($datosForm['numForm']);
             if(is_numeric($numero)){
                 $cadena="<h2>El valor ingresado es ";
                 if($numero<0){

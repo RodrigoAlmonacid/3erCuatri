@@ -164,17 +164,19 @@ main {
     align-items: center;
 }
 
+.carpetas a img, .ejercicios a img {
+    float: left;
+    margin-right: 30px;
+}
+
 .carpetas a img {
     width: 30dvh;
     max-width: 150px;
-    float: left;
 }
 
 .ejercicios a img {
     width: 15dvh;
     max-width: 65px;
-    float: left;
-    margin-right: 30px;
 }
 
 .carpetas a:hover {

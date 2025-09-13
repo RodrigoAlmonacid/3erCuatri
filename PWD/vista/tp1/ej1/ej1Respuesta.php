@@ -4,8 +4,11 @@
     include_once('../../estructura/head.php')
 ?>
 <!-- Espacio para incluir archivos js o css propios de esta vista -->
- <?php
-include_once '../../../control/tp1/ej1VerNumero.php';
+<?php
+    include_once('../../../helpers/tipoAction.php');
+    $datosForm=getSubmittedData();
+    include_once '../../../control/tp1/ej1VerNumero.php';
+    $cadena=verNumero($datosForm);
 ?>
 </head>
 <body>
@@ -16,9 +19,7 @@ include_once '../../../control/tp1/ej1VerNumero.php';
     <main>
         <div class="contenedor">
             <h1>Respuesta</h1>
-            <?php 
-            echo verNumero();
-            ?>
+            <?=$cadena?>
             <a href="ej1Index.php"><input type="button" value="Volver"></a>
         </div>    
     </main>

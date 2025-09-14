@@ -8,6 +8,7 @@ function muestraDatos($datos){
         $regla="/^[a-zA-Záéíóúü\s]+$/";//regla de caracteres admitidos
         $estudios=$datos['estudios'];
         $sexo=$datos['sexo'];
+        $deporte=$datos['deporte'];
         if(preg_match($regla, $nombre) && preg_match($regla, $apellido) && is_numeric($edad) && preg_match("/^[a-zA-Záéíóúü\s0-9.,°-]+$/", $direccion)){
             $respuesta="<h2>Hola, yo soy $nombre, $apellido tengo $edad años y vivo en $direccion.<br>";
             if($edad>18){
@@ -29,14 +30,38 @@ function muestraDatos($datos){
             }
             $respuesta.="Sexo: ";
             if($sexo=='m'){
-                $respuesta.="masculino.</h2>";
+                $respuesta.="masculino.<br>";
             }
             elseif($sexo=='f'){
-                $respuesta.="femenino.</h2>";
+                $respuesta.="femenino.<br>";
             }
             else{
-                $respuesta.="otro.</h2>";
+                $respuesta.="otro.<br>";
             }
+            $respuesta.="Deportes:<br><ul>";
+            $dep=0;
+            foreach($deporte as $unDep){
+                if($unDep=='fut'){
+                    $respuesta.="<li>Futbol</li>";
+                    $dep++;
+                }
+                elseif($unDep=='bas'){
+                    $respuesta.="<li>Basquet</li>";
+                    $dep++;
+                }
+                elseif($unDep=='ten'){
+                    $respuesta.="<li>Tennis</li>";
+                    $dep++;
+                }
+                elseif($unDep=='vol'){
+                    $respuesta.="<li>Voley</li>";
+                    $dep++;
+                }
+                else{
+                    $respuesta.="<li>No practica deportes</li>";
+                }
+            }
+            $respuesta.="</ul><br>Usted practica {$dep} deportes.</h2>";
         }
         else{
             $respuesta="<h2>Alguno de los campos es incorrecto en el formulario.</h2>";

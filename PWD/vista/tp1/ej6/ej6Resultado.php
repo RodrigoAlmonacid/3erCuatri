@@ -1,13 +1,13 @@
 <!-- Inluye el header -->
 <?php
-    $title = "Ejercicio 1";
+    $title = "Ejercicio 6";
     include_once('../../estructura/head.php')
 ?>
 <!-- Espacio para incluir archivos js o css propios de esta vista -->
 <?php
 include_once('../../../helpers/tipoAction.php');
 $datosForm=getSubmittedData();
-include_once('../../../control/tp1/ej4DatosPersonales.php');
+include_once('../../../control/tp1/ej6DatosPersonales.php');
 $cadena=muestraDatos($datosForm);
 ?>
 </head>

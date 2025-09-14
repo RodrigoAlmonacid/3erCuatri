@@ -5,7 +5,10 @@
 ?>
 <!-- Espacio para incluir archivos js o css propios de esta vista -->
 <?php
+include_once('../../../helpers/tipoAction.php');
+$datosForm=getSubmittedData();
 include_once '../../../control/tp1/ej3DatosPersonales.php';
+$cadena=muestraDatos($datosForm);
 ?>
 </head>
 <body>
@@ -15,7 +18,7 @@ include_once '../../../control/tp1/ej3DatosPersonales.php';
     ?>
     <main>
         <div class="contenedor">
-            <?php echo muestraDatos()?>
+            <?=$cadena?>
         </div>
     </main>
 <!-- Incluye footer -->

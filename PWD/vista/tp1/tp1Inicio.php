@@ -21,6 +21,7 @@
                 <div class="imagen"><a href="ej3/ej3Index.php"><img src="../img/imgPhp.png" alt="Imagen de carpeta"><h4>Ejercicio 3</h4></a></div>
                 <div class="imagen"><a href="ej4/ej4Index.php"><img src="../img/imgPhp.png" alt="Imagen de carpeta"><h4>Ejercicio 4</h4></a></div>
                 <div class="imagen"><a href="ej5/ej5Index.php"><img src="../img/imgPhp.png" alt="Imagen de carpeta"><h4>Ejercicio 5</h4></a></div>
+                <div class="imagen"><a href="ej6/ej6Index.php"><img src="../img/imgPhp.png" alt="Imagen de carpeta"><h4>Ejercicio 6</h4></a></div>
             </div> 
         </div>    
     </main>

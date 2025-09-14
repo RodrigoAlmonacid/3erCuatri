@@ -1,10 +1,10 @@
 <?php
-function muestraDatos(){
-    if(!empty($_POST['nombre']) && !empty($_POST['apellido']) && !empty($_POST['edad']) && !empty($_POST['direccion'])){
-        $nombre=trim($_POST['nombre']);
-        $apellido=trim($_POST['apellido']);
-        $edad=trim($_POST['edad']);
-        $direccion=trim($_POST['direccion']);
+function muestraDatos($datos){
+    if(!empty($datos['nombre']) && !empty($datos['apellido']) && !empty($datos['edad']) && !empty($datos['direccion'])){
+        $nombre=trim($datos['nombre']);
+        $apellido=trim($datos['apellido']);
+        $edad=trim($datos['edad']);
+        $direccion=trim($datos['direccion']);
         $regla="/^[a-zA-Záéíóúü\s]+$/";//regla de caracteres admitidos
         if(preg_match($regla, $nombre) && $nombre!="" && preg_match($regla, $apellido) && $apellido!="" && $edad!="" && is_numeric($edad) && preg_match("/^[a-zA-Záéíóúü\s0-9.,°-]+$/", $direccion) && $direccion!=""){
             $respuesta="<h2>Hola, yo soy $nombre, $apellido tengo $edad años y vivo en $direccion.</h2>";

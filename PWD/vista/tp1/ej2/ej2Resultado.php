@@ -5,7 +5,10 @@
 ?>
 <!-- Espacio para incluir archivos js o css propios de esta vista -->
 <?php
+include_once('../../../helpers/tipoAction.php');
+$datosForm=getSubmittedData();
 include_once '../../../control/tp1/ej2HorasCursada.php';
+$cadena=horasCursada($datosForm);
 ?>
 </head>
 <body>
@@ -16,7 +19,7 @@ include_once '../../../control/tp1/ej2HorasCursada.php';
     <main>
     <div class="contenedor">
         <h2>Horas de cursada, Materia PWD</h2>
-        <?php echo horasCursada()?>
+        <?=$cadena?>
     </div>
     </main>
 <!-- Incluye footer -->

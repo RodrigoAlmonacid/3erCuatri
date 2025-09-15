@@ -20,6 +20,7 @@ $cadena=horasCursada($datosForm);
     <div class="contenedor">
         <h2>Horas de cursada, Materia PWD</h2>
         <?=$cadena?>
+        <a href="ej2Index.php"><input type="button" value="Volver"></a>
     </div>
     </main>
 <!-- Incluye footer -->

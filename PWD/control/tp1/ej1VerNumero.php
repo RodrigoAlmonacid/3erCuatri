@@ -1,8 +1,8 @@
 <?php
     function verNumero($datosForm){
-        if (isset($datosForm['numForm']) && $datosForm['numForm'] != ""){
+        if (isset($datosForm['numForm'])){ 
             $numero = trim($datosForm['numForm']);
-            if(is_numeric($numero)){
+            if($datosForm['numForm'] != "" && is_numeric($numero)){
                 $cadena="<h2>El valor ingresado es ";
                 if($numero<0){
                     $cadena.="un número negativo.</h2><br/>";

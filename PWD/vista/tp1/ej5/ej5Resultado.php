@@ -19,6 +19,7 @@ $cadena=muestraDatos($datosForm);
     <main>
         <div class="contenedor">
             <?=$cadena?>
+            <a href="ej5Index.php"><input type="button" value="Volver"></a>
         </div>
     </main>
 <!-- Incluye footer -->

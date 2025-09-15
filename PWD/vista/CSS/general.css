@@ -236,8 +236,9 @@ main {
 
 /* --- Botones --- */
 .formulario input[type="submit"],
-.formulario a input[type="button"],
-.formulario button[type="button"] {
+.formulario input[type="button"],
+.formulario button[type="button"], 
+a input[type="button"] {
     background: #4CAF50;
     color: white;
     border: none;
@@ -249,7 +250,8 @@ main {
 }
 
 .formulario input[type="submit"]:hover,
-.formulario input[type="button"]:hover,
-.formulario button[type="button"]:hover {
+.formulario a input[type="button"]:hover,
+.formulario button[type="button"]:hover,
+a input[type="button"]:hover {
     background: #45a049;
 }

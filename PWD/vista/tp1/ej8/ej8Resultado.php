@@ -19,7 +19,7 @@ $cadena=calculadora($datosForm);
     <main>
         <div class="contenedor">
             <?=$cadena?>
-            <a href="ej7Index.php"><input type="button" value="Volver"></a>
+            <a href="ej8Index.php"><input type="button" value="Volver"></a>
         </div>
     </main>
 <!-- Incluye footer -->

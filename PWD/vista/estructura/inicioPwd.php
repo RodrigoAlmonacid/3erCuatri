@@ -26,7 +26,7 @@
                 <div class="imagen"><a href="../tp1/tp1Inicio.php"><img src="../img/carpeta.png" alt="Imagen de carpeta"><h4>TP1</h4></a></div>
                 <div class="imagen"><a href="mantenimiento.php"><img src="../img/carpeta.png" alt="Imagen de carpeta"><h4>TP2</h4></a></div>
                 <div class="imagen"><a href="mantenimiento.php"><img src="../img/carpeta.png" alt="Imagen de carpeta"><h4>TP3</h4></a></div>
-                <div class="imagen"><a href="mantenimiento.php"><img src="../img/carpeta.png" alt="Imagen de carpeta"><h4>TP4</h4></a></div>
+                <div class="imagen"><a href="../tp4/tp4Inicio.php"><img src="../img/carpeta.png" alt="Imagen de carpeta"><h4>TP4</h4></a></div>
             </div> 
         </div>    
     </main>

@@ -14,7 +14,7 @@
                     <li><a href="<?=$ruta?>/vista/tp1/tp1Inicio.php">TP 1</a></li>
                     <li><a href="<?=$ruta?>/vista/estructura/mantenimiento.php">TP 2</a></li>
                     <li><a href="<?=$ruta?>/vista/estructura/mantenimiento.php">TP 3</a></li>
-                    <li><a href="<?=$ruta?>/vista/estructura/mantenimiento.php">TP 4</a></li>
+                    <li><a href="<?=$ruta?>/vista/tp4/tp4Inicio.php">TP 4</a></li>
                 </ul>
             </nav>
         </div>

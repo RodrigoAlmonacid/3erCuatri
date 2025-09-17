@@ -1,6 +1,6 @@
 <!-- Inluye el header -->
 <?php
-    $title = "Inicio";
+    $title = "Error";
     include_once('head.php')
 ?>
 <!-- Espacio para incluir archivos js o css propios de esta vista -->
@@ -16,6 +16,7 @@
         <div class="contenedor">
             <h2>Estamos en tareas de mantenimiento, sepa disculpar las molestias...</h2>
             <img src="../img/mono-platillos.gif" alt="gif-mono-platillos">
+            <a href="inicioPwd.php"><input type="button" value="Volver al Inicio"></a>
         </div>    
     </main>
 

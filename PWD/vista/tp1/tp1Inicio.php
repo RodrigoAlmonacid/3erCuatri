@@ -15,7 +15,7 @@
             <h2>Trabajo práctico número 1</h2>
             <h3>Ejercicios:</h3>
             <div class="ejercicios">
-                <h3>Acceso a trabajos prácticos</h3>
+                <h3>Acceso a ejercicios</h3>
                 <div class="imagen"><a href="ej1/ej1Index.php"><img src="../img/imgPhp.png" alt="Imagen de php"><h4>Ejercicio 1</h4></a></div>
                 <div class="imagen"><a href="ej2/ej2Index.php"><img src="../img/imgPhp.png" alt="Imagen de php"><h4>Ejercicio 2</h4></a></div>
                 <div class="imagen"><a href="ej3/ej3Index.php"><img src="../img/imgPhp.png" alt="Imagen de php"><h4>Ejercicio 3</h4></a></div>

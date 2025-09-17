@@ -12,8 +12,9 @@
                 <ul>
                     <li><a href="<?=$ruta?>/vista/estructura/inicioPwd.php">Inicio</a></li>
                     <li><a href="<?=$ruta?>/vista/tp1/tp1Inicio.php">TP 1</a></li>
-                    <li><a href="tp2.php">TP 2</a></li>
-                    <li><a href="tp3.php">TP 3</a></li>
+                    <li><a href="<?=$ruta?>/vista/estructura/mantenimiento.php">TP 2</a></li>
+                    <li><a href="<?=$ruta?>/vista/estructura/mantenimiento.php">TP 3</a></li>
+                    <li><a href="<?=$ruta?>/vista/estructura/mantenimiento.php">TP 4</a></li>
                 </ul>
             </nav>
         </div>

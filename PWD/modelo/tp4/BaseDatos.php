@@ -11,7 +11,7 @@ class BaseDatos {
 
     public function __construct() {
         $this->hostName = "localhost";
-        $this->baseDatos = "mattekudasai";
+        $this->baseDatos = "pwd";
         $this->usuario = "root";
         $this->clave = "";
         $this->result = null;

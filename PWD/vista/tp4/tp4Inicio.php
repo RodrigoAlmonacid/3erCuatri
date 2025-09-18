@@ -16,7 +16,7 @@
             <h3>Ejercicios:</h3>
             <div class="ejercicios">
                 <h3>Acceso a ejercicios</h3>
-                <div class="imagen"><a href="../estructura/mantenimiento.php"><img src="../img/imgPhp.png" alt="Imagen de php"><h4>Ejercicio 1</h4></a></div>
+                <div class="imagen"><a href="ej4/VerAutos.php"><img src="../img/imgPhp.png" alt="Imagen de php"><h4>Ver Autos</h4></a></div>
                 <div class="imagen"><a href="../estructura/mantenimiento.php"><img src="../img/imgPhp.png" alt="Imagen de php"><h4>Ejercicio 2</h4></a></div>
                 <div class="imagen"><a href="../estructura/mantenimiento.php"><img src="../img/imgPhp.png" alt="Imagen de php"><h4>Ejercicio 3</h4></a></div>
                 <div class="imagen"><a href="../estructura/mantenimiento.php"><img src="../img/imgPhp.png" alt="Imagen de php"><h4>Ejercicio 4</h4></a></div>

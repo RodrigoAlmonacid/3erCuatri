@@ -1,5 +1,7 @@
 <?php
 include_once('Persona.php');
+include_once('Auto.php');
+//Clase Persona
 $objPersona=new Persona();
 /* Test buscar()
 $busca=$objPersona->buscar(22985265);
@@ -23,9 +25,9 @@ $insertar=$objPersona->insertar();
 if($insertar){
     echo "Persona cargada con éxito.\n";
 }
-else{echo "Nop.\n";}
+else{echo "Nop.\n";} 
 */
-/* Test modificar() */
+/* Test modificar() 
 $buscar=$objPersona->buscar(33773024);
 echo "Persona encontrada:\n".$objPersona."\n";
 $setNombre=$objPersona->setNombre('Rodrigo'); //modifico el nombre al objeto
@@ -35,4 +37,42 @@ if($modificar){
     echo $objPersona."\n";
 }
 else{echo "Nop.\n";}
+*/
+//Clase auto
+$objAuto=new Auto();
+/* Test buscar() 
+$busca=$objAuto->buscar('ADC 152');
+if($busca){
+    echo "Ecuentra\n";
+    echo $objAuto;
+}
+else{echo "Nop.\n";}
+*/
+/* Test listar() 
+$listar=$objAuto->listar();
+$i=0;
+foreach($listar as $auto){
+    $i++;
+    echo "Persona: ".$i."\n".$auto."\n";
+}
+*/
+/* Test insertar() 
+$cargar=$objAuto->cargar('ORF 515', 2015, 'Chevrolet classic', '33773024'); 
+$insertar=$objAuto->insertar();
+if($insertar){
+    echo "Vehiculo cargado con éxito.\n";
+}
+else{echo "Nop.\n";} 
+*/
+/* Test modificar() */
+$buscar=$objAuto->buscar('POL 968');
+echo "Vehiculo encontrado:\n".$objAuto."\n";
+$setModelo=$objAuto->setModelo(1977); //modifico el nombre al objeto
+$modificar=$objAuto->modificar(); //modifico el nombre en la base
+if($modificar){
+    echo "Vehículo modificado.\n";
+    echo $objAuto."\n";
+}
+else{echo "Nop.\n";}
+
 ?>

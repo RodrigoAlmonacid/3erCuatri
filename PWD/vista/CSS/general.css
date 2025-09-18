@@ -138,10 +138,18 @@ main {
     padding: 30px;
     border-radius: 10px;
     border: 1px solid #737a7a;
-    max-width: 500px;
-    width: 100%;
+    max-width: 80dvh;
+    width: 80%;
     box-shadow: 0 4px 15px rgba(0,0,0,0.1);
     margin: 20px auto;
+}
+
+.contenedor img {
+    width: 50dvh;
+    max-width: 500px;
+    padding: 20px;
+    border-radius: 15px;
+    align-items: center;
 }
 
 .carpetas, .ejercicios {
@@ -236,6 +244,7 @@ main {
 
 /* --- Botones --- */
 .formulario input[type="submit"],
+.contenedor input[type="button"],
 .formulario input[type="button"],
 .formulario button[type="button"], 
 a input[type="button"] {
@@ -250,6 +259,7 @@ a input[type="button"] {
 }
 
 .formulario input[type="submit"]:hover,
+.contenedor input[type="button"]:hover,
 .formulario a input[type="button"]:hover,
 .formulario button[type="button"]:hover,
 a input[type="button"]:hover {

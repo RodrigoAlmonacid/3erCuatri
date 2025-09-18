@@ -85,8 +85,8 @@ class Persona{
         $this->setDomicilio($domicilio);
     }
 
-        /** funcion que me permite buscar una persona por dni
-     * @param int $idVisita
+    /** funcion que me permite buscar una persona por dni
+     * @param int $dni
      * @return bool
      */
     public function buscar($dni){
@@ -139,7 +139,7 @@ class Persona{
         return $arregloPersonas;
     }
 
-    /** funcion que me permite insertar una visita
+    /** funcion que me permite insertar una persona
      * @return bool
      */
     public function insertar(){

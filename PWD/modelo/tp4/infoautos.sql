@@ -67,4 +67,3 @@ ALTER TABLE `auto` ADD KEY `idTipoVehiculo` (`DniDuenio`);
 
 ALTER TABLE `auto`
 ADD CONSTRAINT `auto_ibfk_1` FOREIGN KEY (`DniDuenio`) REFERENCES `persona` (`NroDni`);
-

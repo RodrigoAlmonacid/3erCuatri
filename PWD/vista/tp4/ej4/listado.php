@@ -15,16 +15,38 @@
     ?>
     <main>
         <div class="contenedor">
-            <h1>Listado:</h1>
-            <?php
-                if(count($arregloAutos)>0){
-                    foreach($arregloAutos as $unAuto){
-                        echo $unAuto."<br>";
+            <div class="pantalla-texto">
+                <?php
+                    $cantidad=count($arregloAutos);
+                    if($cantidad>0){
+                        $i=0;
+                        ?>
+                        <h1>Hemos encontrado <?=$cantidad?> vehiculos.</h1>
+                        <h2>Listado:</h2>
+                        <?php
+                        foreach($arregloAutos as $unAuto){
+                            $i++;
+                            $modelo=$unAuto->getModelo();
+                            $marca=$unAuto->getMarca();
+                            $patente=$unAuto->getPatente();
+                            $objPersona=$unAuto->getObjPersona();
+                            $nombre=$objPersona->getNombre();
+                            $apellido=$objPersona->getApellido();
+                            ?>
+                                <h3>Vehiculo Nº: <?=$i?></h3>
+                                <ul>
+                                    <li>Patente: <?=$patente?></li>
+                                    <li>Marca: <?=$marca?></li>
+                                    <li>Modelo: <?=$modelo?></li>
+                                    <li>Su dueño es: <?=$nombre?> <?=$apellido?></li>
+                                </ul>
+                            <?php
+                        }
                     }
-                }
-                else{echo "No se encontraron registros.";}
-            ?> 
-            <a href="VerAutos.php"><input type="button" value="Volver"></a>
+                    else{echo "No se encontraron registros.";}
+                ?> 
+                <a href="VerAutos.php"><input type="button" value="Volver"></a>
+            </div>
         </div>
     </main>
 <!-- Incluye footer -->

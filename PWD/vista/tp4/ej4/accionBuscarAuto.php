@@ -18,31 +18,34 @@
     ?>
     <main>
         <div class="contenedor">
-            <?php
-            if($resultado['encuentra']){
-                ?>
-                <h1>Vehiculo encontrado:</h1>
+            <div class="pantalla-texto">
                 <?php
-                    $modelo=$resultado['objeto']->getModelo();
-                    $marca=$resultado['objeto']->getMarca();
-                    $patente=$resultado['objeto']->getPatente();
-                    $objPersona=$resultado['objeto']->getObjPersona();
-                    $nombre=$objPersona->getNombre();
-                    $apellido=$objPersona->getApellido();
+                    if($resultado['encuentra']){
+                        ?>
+                        <h1>Vehiculo encontrado:</h1>
+                        <?php
+                            $modelo=$resultado['objeto']->getModelo();
+                            $marca=$resultado['objeto']->getMarca();
+                            $patente=$resultado['objeto']->getPatente();
+                            $objPersona=$resultado['objeto']->getObjPersona();
+                            $nombre=$objPersona->getNombre();
+                            $apellido=$objPersona->getApellido();
+                        ?>
+                        <ul>
+                            <li>Patente: <?=$patente?></li>
+                            <li>Marca: <?=$marca?></li>
+                            <li>Modelo: <?=$modelo?></li>
+                            <li>Su dueño es: <?=$nombre?> <?=$apellido?></li>
+                        </ul>
+                        <?php
+                    }
+                    else{
+                        ?>
+                        <h1><?=$resultado['error']?></h1>
+                    <?php }
                 ?>
-                <ul>
-                    <li>Patente: <?=$patente?></li>
-                    <li>Marca: <?=$marca?></li>
-                    <li>Modelo: <?=$modelo?></li>
-                    <li>Su dueño es: <?=$nombre?> <?=$apellido?></li>
-                </ul>
-                <?php
-            }
-            else{
-                ?>
-                <h1><?=$resultado['error']?></h1>
-            <?php }?>
-            <a href="buscarAuto.php"><input type="button" value="Volver"></a>
+                <a href="buscarAuto.php"><input type="button" value="Volver"></a>
+            </div>
         </div>
     </main>
 <!-- Incluye footer -->

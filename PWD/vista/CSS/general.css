@@ -155,6 +155,34 @@ main {
     border-radius: 15px;
     align-items: center;
 }
+
+.dos-opciones {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.op-a, .op-b {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 45%;
+    text-align: center;
+}
+
+.op-a h2, .op-b h2 {
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+.op-a img, .op-b img {
+    width: 20dvh;
+    margin-bottom: 10px;
+}
+
 .contenedor #patente {
     align-self: flex-start;
     max-width: 150px;

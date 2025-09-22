@@ -75,7 +75,7 @@ class Auto{
             $this->setObjPersona($objPersona);
         }
         else{
-            $error="Error al buscar la persona con dni {$dniDuenio}.\n";
+            $error="Error al buscar la persona con dni '$dniDuenio'.\n";
             $this->setError($error);
         }
     }

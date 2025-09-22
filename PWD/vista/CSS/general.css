@@ -264,6 +264,7 @@ main {
 /* --- Inputs --- */
 .formulario input[type="text"],
 .group-row input[type="text"],
+.formulario input[type="date"],
 .formulario input[type="number"],
 .formulario select {
     padding: 10px;
@@ -308,4 +309,21 @@ a input[type="button"] {
 .formulario button[type="button"]:hover,
 a input[type="button"]:hover {
     background: #45a049;
+}
+
+.divDatos {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.pares {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    align-items: flex-start;
+    padding: 10px;
 }

@@ -2,18 +2,34 @@
     include_once(__DIR__.'/../../modelo/tp4/Auto.php');
     include_once(__DIR__.'/../../modelo/tp4/Persona.php');
     include_once('buscarPatente.php');
-    $objPersona=new Persona();
-    $arregloPersonas=$objPersona->listar();
+    
+    function verPersonas(){
+        $objPersona=new Persona();
+        $respuesta=$objPersona->listar();
+        return $respuesta;
+    }
+    
     function buscarPersona($dni){
         //Falta validar el dni
         $objPersona=new Persona();
         $encuentra=$objPersona->buscar($dni);
+        $respuesta=[
+            'encuentra'=>$encuentra,
+            'persona'=>$objPersona
+        ];
+        return $respuesta;
+    }
+
+    function buscarAutoPersona($dni){
         $error="";
+        $arregloAuto=[];
+        $buscar=buscarPersona($dni);
+        $encuentra=$buscar['encuentra'];
+        $objPersona=$buscar['persona'];
         if($encuentra){
-            $consulta="SELECT a.Patente, a.Marca, a.Modelo FROM auto a INNER JOIN persona p ON a.DniDuenio=p.NroDni WHERE a.DniDuenio='$dni';";
+            $consulta="SELECT Patente, Marca, Modelo FROM auto WHERE DniDuenio='$dni';";
             $base=new BaseDatos();
             $respuesta=false;
-            $arregloAuto=[];
             if($base->Iniciar()){
                 if($base->Ejecutar($consulta)){
                     $row=$base->Registro();
@@ -37,6 +53,27 @@
             "encuentra"=>$encuentra,
             "arreglo"=>$arregloAuto,
             "persona"=>$objPersona,
+            "error"=>$error
+        ];
+        return $respuesta;
+    }
+
+    function insertarPersona($datos){
+        $dni=$datos['dni'];
+        $nombre=$datos['nombre'];
+        $apellido=$datos['apellido'];
+        $domicilio=$datos['domicilio'];
+        $telefono=$datos['telefono'];
+        $fechaNac=$datos['fechaNac'];
+        $objPersona=new Persona();
+        $error="";
+        $objPersona->cargar($nombre, $apellido, $telefono, $fechaNac, $dni, $domicilio);
+        $inserta=$objPersona->insertar();
+        if(!$inserta){
+            $error="No pudo incluirse la persona en la base de datos";
+        }
+        $respuesta=[
+            "inserta"=>$inserta,
             "error"=>$error
         ];
         return $respuesta;

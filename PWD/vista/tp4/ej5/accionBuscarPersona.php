@@ -8,7 +8,7 @@
     include_once('../../../helpers/tipoAction.php');
     $datosForm=getSubmittedData();
     include_once('../../../control/tp4/ej5VerPersonas.php');
-    $resultado=buscarPersona($datosForm['dni']);
+    $resultado=buscarAutoPersona($datosForm['dni']);
 ?>
 </head>
 <body>
@@ -34,36 +34,43 @@
                     $anio=substr($nacimiento, 0, 4);
                     $mes=substr($nacimiento, 5, 2);
                     $dia=substr($nacimiento, 8, 2);
-                    ?>
-                    <h2>Persona encontrada:</h2>
-                    <ul>
-                        <li>Nombre: <?=$nombre?></li>
-                        <li>Apellido: <?=$apellido?></li>
-                        <li>Dni N°: <?=$dni?></li>
-                        <li>Fecha de nacimiento: <?=$dia?>/<?=$mes?>/<?=$anio?></li>
-                        <li>Telefono: <?=$telefono?></li>
-                        <li>Domicilio: <?=$domicilio?></li>
-                    </ul>
-                    <?php 
-                    if($cantidad>0){
+                    if($encuentra){
                         ?>
-                        <h2>La persona tiene <?=$cantidad?> autos</h2>
-                        <h2>Listado:</h2>
-                        <?php
-                        for($i=0; $i<$cantidad; $i++){
+                        <h2>Persona encontrada:</h2>
+                        <ul>
+                            <li>Nombre: <?=$nombre?></li>
+                            <li>Apellido: <?=$apellido?></li>
+                            <li>Dni N°: <?=$dni?></li>
+                            <li>Fecha de nacimiento: <?=$dia?>/<?=$mes?>/<?=$anio?></li>
+                            <li>Telefono: <?=$telefono?></li>
+                            <li>Domicilio: <?=$domicilio?></li>
+                        </ul>
+                        <?php 
+                        if($cantidad>0){
                             ?>
-                            <ul>
-                                <li>Marca: <?=$arregloAutos[$i]['Marca']?></li>
-                                <li>Modelo: <?=$arregloAutos[$i]['Modelo']?></li>
-                                <li>Patente: <?=$arregloAutos[$i]['Patente']?></li>
-                            </ul>
+                            <h2>La persona tiene <?=$cantidad?> autos</h2>
+                            <h2>Listado:</h2>
                             <?php
+                            for($i=0; $i<$cantidad; $i++){
+                                ?>
+                                <ul>
+                                    <li>Marca: <?=$arregloAutos[$i]['Marca']?></li>
+                                    <li>Modelo: <?=$arregloAutos[$i]['Modelo']?></li>
+                                    <li>Patente: <?=$arregloAutos[$i]['Patente']?></li>
+                                </ul>
+                                <?php
+                            }
+                        }
+                        else{
+                            ?>
+                            <h2>No se encontraron autos registrados con el DNI <?=$datosForm['dni']?></h2>
+                            <?php    
                         }
                     }
                     else{
                         ?>
-                        <h2>No se encontraron autos registrados con el DNI <?=$datosForm['dni']?></h2>
-                        <?php    
+                        <h2><?=$error?>.</h2>
+                        <?php
                     }
                 ?> 
                 <a href="listaPersonas.php"><input type="button" value="Volver"></a>

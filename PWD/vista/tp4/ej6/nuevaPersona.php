@@ -1,6 +1,6 @@
 <!-- Inluye el header -->
 <?php
-    $title = "Buscar Persona";
+    $title = "Crear persona";
     include_once('../../estructura/head.php')
 ?>
 <!-- Espacio para incluir archivos js o css propios de esta vista -->
@@ -12,16 +12,13 @@
     ?>
     <main>
         <div class="contenedor">
-            <h1>Buscar persona por DNI</h1>
-            <div class="group-row">
-                <img id="patente" src="../../img/dni.png" alt="DNI">
-                <form class="formulario" action="accionBuscarPersona.php" method="get">
+            <h1>Crear persona</h1>
+                <form class="formulario" action="preCrearPersona.php" method="post">
                     <label for="dni">Ingrese DNI:
-                        <input type="number" placeholder="11222333" maxlength="9" name="dni" id="dni" required>
+                        <input type="number" placeholder="11222333" min="0" max="99999999" name="dni" id="dni" required>
                     </label>
-                    <input type="submit" value="Consultar">
+                        <input type="submit" value="Crear">
                 </form>
-            </div>
         </div>
         <script src="../../JS/patente.js"></script>
     </main>

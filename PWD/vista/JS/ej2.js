@@ -8,6 +8,7 @@ botonDias.addEventListener("click", ()=>{
     if(cantidad>0){
         divDias.style.display="block";
         botonEnvio.style.display="block";
+        botonDias.style.display="none";
         divDias.replaceChildren();
         for(let i=0; i<cantidad; i++){
             const label = document.createElement('label');

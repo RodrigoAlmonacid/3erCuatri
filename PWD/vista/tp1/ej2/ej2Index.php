@@ -16,10 +16,11 @@
             <form class="formulario" action="ej2Resultado.php" method="get">
                 <label for="cantDias">¿cuántos días a la semana cursa?</label>
                 <input type="number" min="1" max="7" name="cantDias" id="dias" required>
-                <button type="button" id="bttDias">Aceptar</button>
-                <div style="display:none;" id="divDias">
-
+                <div>
+                    <button type="button" id="bttDias">Aceptar</button>
+                    <a href="../tp1Inicio.php"><input type="button" value="Volver"></a>
                 </div>
+                <div style="display:none;" id="divDias"></div>
                 <input type="submit" value="Enviar" id="bttEnviar" style="display:none;">
             </form>
         </div>

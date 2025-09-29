@@ -1,26 +1,32 @@
 <?php
     function verNumero($datosForm){
+        $error="";
+        $respuesta=[];
+        $dato="";
         if (isset($datosForm['numForm'])){ 
             $numero = trim($datosForm['numForm']);
-            if($datosForm['numForm'] != "" && is_numeric($numero)){
-                $cadena="<h2>El valor ingresado es ";
+            if($numero != "" && is_numeric($numero)){
                 if($numero<0){
-                    $cadena.="un número negativo.</h2><br/>";
+                    $dato="menor";
                 }
                 elseif($numero>0){
-                    $cadena.="un número positivo.</h2><br/>";
+                    $dato="mayor";
                 }
                 else{
-                    $cadena.="cero.</h2><br/>";
+                    $dato="cero";
                 }
             }
             else{
-                $cadena="<h2>Usted no ha ingresado un valor numérico.</h2><br/>";
+                $error="No se ha ingresado un valor numérico";
             }
         }
         else{
-            $cadena="<h2>No se recibieron datos</h2><br/>";
+            $error="No se recibieron datos";
         }
-        return $cadena;
+        $respuesta=[
+            "dato"=>$dato,
+            "error"=>$error
+        ];
+        return $respuesta;
 }
 ?>  

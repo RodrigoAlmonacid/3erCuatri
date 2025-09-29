@@ -1,10 +1,11 @@
 <?php
     function horasCursada($datos){
-        if(isset($datos['cantDias'])){
+        $error="";
+        $arregloDias=[];
+        $sumaHora=0;
+        $sumaMin=0;
+        if(isset($datos['cantDias']) && $datos["hora0"] && $datos["minuto0"]){
             $cantDias=$datos['cantDias'];
-            $arregloDias=[];
-            $sumaHora=0;
-            $sumaMin=0;
             for($i=0; $i<$cantDias; $i++){
                 $hora=$datos["hora$i"];
                 $minuto=$datos["minuto$i"];
@@ -14,11 +15,17 @@
             }
             $sumaHora=$sumaHora+intval($sumaMin/60);
             $sumaMin=$sumaMin-60*intval($sumaMin/60);
-            $respuesta="<h3>Cursa {$cantDias} días en la semana, lo que suma {$sumaHora} horas y {$sumaMin} minutos.<h3>";
         }
         else{
-            $respuesta="Error, no pudieron procesarse datos.<br>";
+            $error="No se recibieron datos";
         }
+        $respuesta=[
+            "cantDias"=>$cantDias,
+            "cantHoras"=>$sumaHora,
+            "cantMinutos"=>$sumaMin,
+            "horaXdia"=>$arregloDias,
+            "error"=>$error
+        ];
         return $respuesta;
     }
 ?>

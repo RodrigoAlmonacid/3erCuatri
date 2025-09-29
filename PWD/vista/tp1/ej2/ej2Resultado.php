@@ -8,7 +8,13 @@
 include_once('../../../helpers/tipoAction.php');
 $datosForm=getSubmittedData();
 include_once '../../../control/tp1/ej2HorasCursada.php';
-$cadena=horasCursada($datosForm);
+$respuesta=horasCursada($datosForm);
+$dias=$respuesta['cantDias'];
+$horas=$respuesta['cantHoras'];
+$minutos=$respuesta['cantMinutos'];
+$semana=$respuesta['horaXdia'];
+$error=$respuesta['error'];
+$i=0;
 ?>
 </head>
 <body>
@@ -18,9 +24,28 @@ $cadena=horasCursada($datosForm);
     ?>
     <main>
     <div class="contenedor">
-        <h2>Horas de cursada, Materia PWD</h2>
-        <?=$cadena?>
-        <a href="ej2Index.php"><input type="button" value="Volver"></a>
+        <?php
+            if($error==""){ ?>
+                <h2>Horas de cursada, Materia PWD</h2>
+                <ul>
+                    <h3>Cursa en total <?=$dias?> día<?php if($dias>1){?>s<?php }?>.</h3>
+                    <div class="radio-group">
+                    <?php
+                        foreach($semana as $unDia){ 
+                            $i++;?>
+                            <li>Día <?=$i?>: <?=$unDia?> hs.</li>
+                        <?php }?>
+                        <li>Total: <?=$horas?> horas y <?=$minutos?> minutos.</li>
+                </ul>
+            <?php }
+            else{ ?>
+                <h2><?=$error?></h2>
+            <?php }?>
+
+        <div>
+            <a href="ej2Index.php"><input type="button" value="Volver"></a>
+        </div>
+                        </div>
     </div>
     </main>
 <!-- Incluye footer -->

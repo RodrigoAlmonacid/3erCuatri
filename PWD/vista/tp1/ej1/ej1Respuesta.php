@@ -8,7 +8,7 @@
     include_once('../../../helpers/tipoAction.php');
     $datosForm=getSubmittedData();
     include_once '../../../control/tp1/ej1VerNumero.php';
-    $cadena=verNumero($datosForm);
+    $respuesta=verNumero($datosForm);
 ?>
 </head>
 <body>
@@ -19,8 +19,31 @@
     <main>
         <div class="contenedor">
             <h1>Respuesta</h1>
-            <?=$cadena?>
-            <a href="ej1Index.php"><input type="button" value="Volver"></a>
+            <?php
+                if($respuesta['dato']!=""){
+                    $dato=$respuesta['dato'];
+                    ?>
+                        <h2>Usted ingresó el valor <?=$datosForm['numForm']?><?php
+                    if($dato=="mayor"){
+                        ?>
+                            que es un número positivo.</h2>
+                        <?php
+                    }
+                    else if($dato=="menor"){
+                        ?>
+                            que es un número negativo.</h2>
+                        <?php
+                    }
+                }
+                else{
+                    ?>
+                        <h2><?=$respuesta['error']?></h2> 
+                    <?php
+                }
+            ?>
+            <div>
+                <a href="ej1Index.php"><input type="button" value="Volver"></a>
+            </div>
         </div>    
     </main>
 <!-- Incluye footer -->

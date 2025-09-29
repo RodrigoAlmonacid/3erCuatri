@@ -25,6 +25,7 @@
                     <a href="autoPersona.php"><input type="button" value="Consultar"></a>
                 </div>
             </div>
+            <a href="../tp4Inicio.php"><input type="button" value="Volver"></a>
         </div>
     </main>
 <!-- Incluye footer -->

@@ -7,7 +7,7 @@
 <?php
     include_once('../../../helpers/tipoAction.php');
     $datosForm=getSubmittedData();
-    include_once('../../../control/tp4/ej5VerPersonas.php');
+    include_once('../../../control/tp4/controlPersona.php');
     $resultado=buscarAutoPersona($datosForm['dni']);
 ?>
 </head>
@@ -48,7 +48,7 @@
                         <?php 
                         if($cantidad>0){
                             ?>
-                            <h2>La persona tiene <?=$cantidad?> autos</h2>
+                            <h2>La persona tiene <?=$cantidad?> auto<?php if($cantidad>1){?>s<?php }?></h2>
                             <h2>Listado:</h2>
                             <?php
                             for($i=0; $i<$cantidad; $i++){
@@ -73,7 +73,7 @@
                         <?php
                     }
                 ?> 
-                <a href="listaPersonas.php"><input type="button" value="Volver"></a>
+                <a href="autoPersona.php"><input type="button" value="Volver"></a>
             </div>
         </div>
     </main>

@@ -1,11 +1,12 @@
 <!-- Inluye el header -->
 <?php
     $title = "Listado";
-    include_once('../../estructura/head.php')
+    include_once('../../estructura/head.php');
 ?>
 <!-- Espacio para incluir archivos js o css propios de esta vista -->
 <?php
-    include_once('../../../control/tp4/ej3VerAutos.php')
+    include_once('../../../control/tp4/controlAuto.php');
+    $arregloAutos=verAutos();
 ?>
 </head>
 <body>

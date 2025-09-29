@@ -7,7 +7,7 @@
  <?php
     include_once('../../../helpers/tipoAction.php');
     $datosForm=getSubmittedData();
-    include_once('../../../control/tp4/ej5VerPersonas.php');
+    include_once('../../../control/tp4/controlPersona.php');
     $busca=buscarPersona($datosForm['dni']);
     $existe=$busca['encuentra'];
     $persona=$busca['persona'];
@@ -30,26 +30,32 @@
                                 <div class="pares">
                                     <label for="nombre">Nombre:
                                         <input type="text" name="nombre" id="nombre" required>
+                                        <div id="errorNombre"></div>
                                     </label>
                                     <label for="apellido">Apellido:
                                         <input type="text" name="apellido" id="apellido" required>
+                                        <div id="errorApellido"></div>
                                     </label>
                                 </div>
                                 <div class="pares">
                                     <label for="telefono">Telefono:
                                         <input type="text" name="telefono" id="telefono" required>
+                                        <div id="errorTelefono"></div>
                                     </label>
                                     <label for="fechaNac">Fecha de nacimiento:
                                         <input type="date" name="fechaNac" id="fechaNac" required>
+                                        <div id="errorFecha"></div>
                                     </label>
                                 </div>
                                 <div class="pares">
                                     <label for="domicilio">Domicilio:
                                         <input type="text" name="domicilio" id="domicilio">
+                                        <div id="errorDomicilio"></div>
                                     </label>
                                     <input type="submit" value="Crear">
                                 </div>
                             </div>
+                            <script src="../../JS/datosPersona.js"></script>
                         </form>
                     </div>
             <?php } 

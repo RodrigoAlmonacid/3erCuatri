@@ -5,7 +5,7 @@
 ?>
 <!-- Espacio para incluir archivos js o css propios de esta vista -->
 <?php
-    include_once('../../../control/tp4/ej5VerPersonas.php');
+    include_once('../../../control/tp4/controlPersona.php');
     $arregloPersonas=verPersonas();
 ?>
 </head>

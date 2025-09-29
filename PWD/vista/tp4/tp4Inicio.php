@@ -19,9 +19,9 @@
                 <div class="imagen"><a href="ej4/buscarAuto.php"><img src="../img/imgPhp.png" alt="Imagen de php"><h4>Buscar Auto</h4></a></div>
                 <div class="imagen"><a href="ej5/listaPersonas.php"><img src="../img/imgPhp.png" alt="Imagen de php"><h4>Ver Personas</h4></a></div>
                 <div class="imagen"><a href="ej6/nuevaPersona.php"><img src="../img/imgPhp.png" alt="Imagen de php"><h4>Crear Persona</h4></a></div>
-                <div class="imagen"><a href="../estructura/mantenimiento.php"><img src="../img/imgPhp.png" alt="Imagen de php"><h4>Ejercicio 5</h4></a></div>
-                <div class="imagen"><a href="../estructura/mantenimiento.php"><img src="../img/imgPhp.png" alt="Imagen de php"><h4>Ejercicio 6</h4></a></div>
-                <div class="imagen"><a href="../estructura/mantenimiento.php"><img src="../img/imgPhp.png" alt="Imagen de php"><h4>Ejercicio 7</h4></a></div>
+                <div class="imagen"><a href="ej7/nuevoAuto.php"><img src="../img/imgPhp.png" alt="Imagen de php"><h4>Crear Auto</h4></a></div>
+                <div class="imagen"><a href="ej8/cambioDuenio.php"><img src="../img/imgPhp.png" alt="Imagen de php"><h4>Transferencia de Auto</h4></a></div>
+                <div class="imagen"><a href="ej9/buscarPersona.php"><img src="../img/imgPhp.png" alt="Imagen de php"><h4>Editar persona</h4></a></div>
                 <a href="../estructura/inicioPwd.php"><input type="button" value="Volver"></a>
             </div> 
         </div>    

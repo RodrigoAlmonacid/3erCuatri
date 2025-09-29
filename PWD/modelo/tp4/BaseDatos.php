@@ -12,8 +12,8 @@ class BaseDatos {
     public function __construct() {
         $this->hostName = "localhost";
         $this->baseDatos = "pwd";
-        $this->usuario = "root";
-        $this->clave = "";
+        $this->usuario = "phpmyadmin";
+        $this->clave = "Patagonia1291";
         $this->result = null;
         $this->query = "";
         $this->error = "";

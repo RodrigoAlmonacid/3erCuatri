@@ -7,8 +7,8 @@
 <?php
     include_once('../../../helpers/tipoAction.php');
     $datosForm=getSubmittedData();
-    include_once('../../../control/tp4/buscarPatente.php');
-    $resultado=consultaPatente($datosForm);
+    include_once('../../../control/tp4/controlAuto.php');
+    $resultado=consultaPatente($datosForm['dominio']);
 ?>
 </head>
 <body>

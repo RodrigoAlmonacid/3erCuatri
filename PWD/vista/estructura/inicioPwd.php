@@ -20,6 +20,7 @@
                 <li>Sanchez, Viviana</li>
                 <li>Carrasco Claudia</li>
                 <li>Juan Marcos Gonzalez</li>
+                <li>Federico Amigone</li>
             </ul>
             <div class="carpetas">
                 <h3>Acceso a trabajos prácticos</h3>

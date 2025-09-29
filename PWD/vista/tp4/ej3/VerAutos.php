@@ -14,8 +14,10 @@
         <div class="contenedor">
             <h1>Base de datos de vehículos</h1>
             <img id="auto" src="../../img/auto.png" alt="Auto">
+            <div>
             <a href="listado.php"><input type="button" value="Consultar"></a>
-            </form>
+            <a href="../tp4Inicio.php"><input type="button" value="Volver"></a>
+            </div>
         </div>
     </main>
 <!-- Incluye footer -->

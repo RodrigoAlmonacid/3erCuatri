@@ -37,6 +37,7 @@
                             <li>Modelo: <?=$modelo?></li>
                             <li>Su dueño es: <?=$nombre?> <?=$apellido?></li>
                         </ul>
+
                         <?php
                     }
                     else{

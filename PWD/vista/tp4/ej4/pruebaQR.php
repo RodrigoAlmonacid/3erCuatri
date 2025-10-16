@@ -1,39 +1,42 @@
-<?php
-// Incluir el autoload de Composer
-require '../../../vendor/autoload.php';
+<<?php
+// 1. Habilitar errores para depuración
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 
-// Importar la clase principal
-use chillerlan\QRCode\QRCode;
-use chillerlan\QRCode\QROptions;
+// 2. Incluir el autoloader de Composer (con la ruta segura)
+require __DIR__ . '/../../../vendor/autoload.php';
 
-// 1. Recuperar la URL desde el parámetro GET
-if (isset($_GET['url']) && !empty($_GET['url'])) {
-    $urlParaGenerar = $_GET['url'];
-} else {
-    // Si no se proporciona URL, detenemos la ejecución
-    die("URL no proporcionada.");
+// 3. Importar la clase 'Generator', que es la clase principal para PHP puro
+use SimpleSoftwareIO\QrCode\Generator;
+
+// 4. Recuperar la URL
+if (!isset($_GET['url']) || empty($_GET['url'])) {
+    header("Content-Type: text/plain");
+    die("Error: No se proporcionó una URL.");
 }
 
-// 2. Configurar las opciones del QR
-// Esta es una de las ventajas de esta librería, es muy personalizable
-$options = new QROptions([
-    'version'    => 5, // La "densidad" del QR, 5 es un buen valor estándar
-    'outputType' => QRCode::OUTPUT_IMAGE_PNG, // Queremos una imagen PNG
-    'eccLevel'   => QRCode::ECC_L, // Nivel de corrección de errores (L, M, Q, H)
-    'scale'      => 10, // Tamaño de cada "punto" del QR en píxeles
-    'imageBase64' => false, // Importante: poner en false para enviarla como imagen directa
-]);
+$urlParaGenerar = $_GET['url'];
 
-// 3. Generar el QR
-// El método render() toma los datos (la URL) y genera la salida
-$qrOutput = (new QRCode($options))->render($urlParaGenerar);
+try {
+    // 5. Crear una INSTANCIA del generador de QR. ¡Este es el paso clave!
+    $qrcode = new Generator;
 
-// 4. Enviar la imagen al navegador
-// Primero, enviamos el encabezado para decirle al navegador que es una imagen PNG
-header('Content-Type: image/png');
+    // 6. Usar el objeto que creaste para generar la imagen.
+    // Nota que ahora usamos '->' (operador de objeto) en lugar de '::' (operador estático de Facade)
+    $imagenQR = $qrcode->format('png')
+                       ->size(250)
+                       ->margin(10)
+                       ->generate($urlParaGenerar);
 
-// Luego, mostramos la imagen generada
-echo $qrOutput;
+    // 7. Enviar la imagen PNG al navegador
+    header('Content-Type: image/png');
+    echo $imagenQR;
 
-exit; // Detenemos el script aquí
+} catch (Exception $e) {
+    header('Content-Type: text/plain');
+    echo 'Error al generar el QR: ' . $e->getMessage();
+}
 
+exit;
+?>

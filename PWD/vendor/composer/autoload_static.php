@@ -4,17 +4,12 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit5726834464b54df5c26cde494ec31af2
+class ComposerStaticInit0d1d0a86cf818cdb6ee32f9ddc1f7c94
 {
     public static $prefixLengthsPsr4 = array (
-        'c' => 
+        'S' => 
         array (
-            'chillerlan\\Settings\\' => 20,
-            'chillerlan\\QRCode\\' => 18,
-        ),
-        'E' => 
-        array (
-            'Endroid\\QrCode\\' => 15,
+            'SimpleSoftwareIO\\QrCode\\' => 24,
         ),
         'D' => 
         array (
@@ -27,17 +22,9 @@ class ComposerStaticInit5726834464b54df5c26cde494ec31af2
     );
 
     public static $prefixDirsPsr4 = array (
-        'chillerlan\\Settings\\' => 
+        'SimpleSoftwareIO\\QrCode\\' => 
         array (
-            0 => __DIR__ . '/..' . '/chillerlan/php-settings-container/src',
-        ),
-        'chillerlan\\QRCode\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/chillerlan/php-qrcode/src',
-        ),
-        'Endroid\\QrCode\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/endroid/qr-code/src',
+            0 => __DIR__ . '/..' . '/simplesoftwareio/simple-qrcode/src',
         ),
         'DASPRiD\\Enum\\' => 
         array (
@@ -56,9 +43,9 @@ class ComposerStaticInit5726834464b54df5c26cde494ec31af2
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit5726834464b54df5c26cde494ec31af2::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit5726834464b54df5c26cde494ec31af2::$prefixDirsPsr4;
-            $loader->classMap = ComposerStaticInit5726834464b54df5c26cde494ec31af2::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit0d1d0a86cf818cdb6ee32f9ddc1f7c94::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit0d1d0a86cf818cdb6ee32f9ddc1f7c94::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInit0d1d0a86cf818cdb6ee32f9ddc1f7c94::$classMap;
 
         }, null, ClassLoader::class);
     }

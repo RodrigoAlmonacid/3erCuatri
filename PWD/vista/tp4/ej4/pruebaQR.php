@@ -1,4 +1,4 @@
-<<?php
+<?php
 // 1. Habilitar errores para depuración
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
@@ -25,8 +25,8 @@ try {
     // 6. Usar el objeto que creaste para generar la imagen.
     // Nota que ahora usamos '->' (operador de objeto) en lugar de '::' (operador estático de Facade)
     $imagenQR = $qrcode->format('png')
-                       ->size(250)
-                       ->margin(10)
+                       ->size(300)
+                       ->margin(5)
                        ->generate($urlParaGenerar);
 
     // 7. Enviar la imagen PNG al navegador

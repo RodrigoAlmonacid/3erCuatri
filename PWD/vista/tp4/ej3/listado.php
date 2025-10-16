@@ -7,6 +7,7 @@
 <?php
     include_once('../../../control/tp4/controlAuto.php');
     $arregloAutos=verAutos();
+    session_start();
 ?>
 </head>
 <body>
@@ -25,6 +26,7 @@
                         <h1>Hemos encontrado <?=$cantidad?> vehiculos.</h1>
                         <h2>Listado:</h2>
                         <?php
+                        $arregloExport=[];
                         foreach($arregloAutos as $unAuto){
                             $i++;
                             $modelo=$unAuto->getModelo();
@@ -33,6 +35,14 @@
                             $objPersona=$unAuto->getObjPersona();
                             $nombre=$objPersona->getNombre();
                             $apellido=$objPersona->getApellido();
+                            $autoExport=[
+                                'modelo'=>$modelo,
+                                'marca'=>$marca,
+                                'patente'=>$patente,
+                                'duenio'=>$nombre." ".$apellido,
+                                'dniDuenio'=>$objPersona->getNroDni()
+                            ];
+                            array_push($arregloExport, $autoExport);
                             ?>
                                 <h3>Vehiculo Nº: <?=$i?></h3>
                                 <ul>
@@ -42,10 +52,12 @@
                                     <li>Su dueño es: <?=$nombre?> <?=$apellido?></li>
                                 </ul>
                             <?php
+                            $_SESSION['arregloExport']=$arregloExport;
                         }
                     }
                     else{echo "No se encontraron registros.";}
                 ?> 
+                <a href="pruebaExcel.php"><input type="button" value="Exportar"></a>
                 <a href="VerAutos.php"><input type="button" value="Volver"></a>
             </div>
         </div>

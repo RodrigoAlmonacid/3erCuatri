@@ -5,7 +5,7 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
 // 2. Incluir el autoloader de Composer (con la ruta segura)
-require __DIR__ . '/../../../vendor/autoload.php';
+require __DIR__ . '../../vendor/autoload.php';
 
 // 3. Importar la clase 'Generator', que es la clase principal para PHP puro
 use SimpleSoftwareIO\QrCode\Generator;
@@ -19,11 +19,10 @@ if (!isset($_GET['url']) || empty($_GET['url'])) {
 $urlParaGenerar = $_GET['url'];
 
 try {
-    // 5. Crear una INSTANCIA del generador de QR. ¡Este es el paso clave!
+    // 5. Crear una INSTANCIA del generador de QR
     $qrcode = new Generator;
 
-    // 6. Usar el objeto que creaste para generar la imagen.
-    // Nota que ahora usamos '->' (operador de objeto) en lugar de '::' (operador estático de Facade)
+    // 6. Usar el objeto para generar la imagen
     $imagenQR = $qrcode->format('png')
                        ->size(300)
                        ->margin(5)

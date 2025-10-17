@@ -41,12 +41,12 @@
                         <?php
 
                             // 1. Obtener el nombre del host (dominio)
-                            // Si la cabecera X-Forwarded-Host existe (enviada por ngrok), úsala.
+                            // Si la cabecera X-Forwarded-Host existe (enviada por ngrok), la usa
                             // Si no, usa la cabecera HTTP_HOST normal.
                             $host = isset($_SERVER['HTTP_X_FORWARDED_HOST']) ? $_SERVER['HTTP_X_FORWARDED_HOST'] : $_SERVER['HTTP_HOST'];
                                                 
                             // 2. Determinar el protocolo (http o https)
-                            // Si la cabecera X-Forwarded-Proto existe, úsala.
+                            // Si la cabecera X-Forwarded-Proto existe, la usa
                             // Si no, revisa la variable HTTPS como antes.
                             $protocol = isset($_SERVER['HTTP_X_FORWARDED_PROTO']) ? $_SERVER['HTTP_X_FORWARDED_PROTO'] : ((!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') ? "https" : "http");
                                                 
@@ -64,7 +64,7 @@
                         ?>
                             <div id="divQR" style="display: none;">
                                 <h2>Código QR para esta consulta</h2>
-                                <img src="pruebaQR.php?url=<?php echo urlencode($urlCompleta); ?>" alt="Código QR generado">
+                                <img src="../../../helpers/generaQR.php?url=<?php echo urlencode($urlCompleta); ?>" alt="Código QR generado" loading="lazy">
                                 
                             </div>
                             
@@ -76,10 +76,10 @@
                         <h1><?=$resultado['error']?></h1>
                     <?php }
                 ?>
-                <div class="botonesQR">
-                <a href="buscarAuto.php"><input type="button" value="Volver"></a>
-                <input style="display: flex;" type="button" value="Mostrar QR" id="bttMostrar">
-                <input style="display: none;" type="button" value="Ocultar QR" id="bttOcultar">
+                <div class="botonesExtra">
+                    <a href="buscarAuto.php"><input type="button" value="Volver"></a>
+                    <input style="display: flex;" type="button" value="Mostrar QR" id="bttMostrar">
+                    <input style="display: none;" type="button" value="Ocultar QR" id="bttOcultar">
                 </div>
             </div>
         </div>

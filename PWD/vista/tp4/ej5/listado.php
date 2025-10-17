@@ -7,6 +7,7 @@
 <?php
     include_once('../../../control/tp4/controlPersona.php');
     $arregloPersonas=verPersonas();
+    session_start();
 ?>
 </head>
 <body>
@@ -18,6 +19,7 @@
         <div class="contenedor">
             <div class="pantalla-texto">
                 <?php
+                    $arreglo=[];
                     $cantidad=count($arregloPersonas);
                     if($cantidad>0){
                         $i=0;
@@ -36,6 +38,15 @@
                             $anio=substr($nacimiento, 0, 4);
                             $mes=substr($nacimiento, 5, 2);
                             $dia=substr($nacimiento, 8, 2);
+                            $nuevoDato=[
+                                'nombre'=>$nombre,
+                                'apellido'=>$apellido,
+                                'dni'=>$dni,
+                                'fechaNac'=>$dia."/".$mes."/".$anio,
+                                'telefono'=>$telefono,
+                                'domicilio'=>$domicilio
+                            ];
+                            array_push($arreglo, $nuevoDato);
                             ?>
                                 <h3>Persona Nº: <?=$i?></h3>
                                 <ul>
@@ -47,11 +58,19 @@
                                     <li>Domicilio: <?=$domicilio?></li>
                                 </ul>
                             <?php
+                            $arregloExport=[
+                                'tipo'=>'personas',
+                                'listado'=>$arreglo
+                            ];
+                            $_SESSION['arregloExport']=$arregloExport;
                         }
                     }
                     else{echo "No se encontraron registros.";}
                 ?> 
-                <a href="listaPersonas.php"><input type="button" value="Volver"></a>
+                <div class="botonesExtra">
+                    <a href="listaPersonas.php"><input type="button" value="Volver"></a>
+                    <a href="../../../helpers/exportaExcel.php"><input type="button" value="Exportar"></a>
+                </div>
             </div>
         </div>
     </main>

@@ -328,7 +328,7 @@ a input[type="button"]:hover {
     padding: 10px;
 }
 
-.botonesQR{
+.botonesExtra{
     display: flex;
     flex-direction: row;
     align-items: flex-start;

@@ -26,7 +26,7 @@
                         <h1>Hemos encontrado <?=$cantidad?> vehiculos.</h1>
                         <h2>Listado:</h2>
                         <?php
-                        $arregloExport=[];
+                        $arreglo=[];
                         foreach($arregloAutos as $unAuto){
                             $i++;
                             $modelo=$unAuto->getModelo();
@@ -42,7 +42,7 @@
                                 'duenio'=>$nombre." ".$apellido,
                                 'dniDuenio'=>$objPersona->getNroDni()
                             ];
-                            array_push($arregloExport, $autoExport);
+                            array_push($arreglo, $autoExport);
                             ?>
                                 <h3>Vehiculo Nº: <?=$i?></h3>
                                 <ul>
@@ -52,13 +52,19 @@
                                     <li>Su dueño es: <?=$nombre?> <?=$apellido?></li>
                                 </ul>
                             <?php
+                            $arregloExport=[
+                                'tipo'=>'autos',
+                                'listado'=>$arreglo
+                            ];
                             $_SESSION['arregloExport']=$arregloExport;
                         }
                     }
                     else{echo "No se encontraron registros.";}
                 ?> 
-                <a href="pruebaExcel.php"><input type="button" value="Exportar"></a>
-                <a href="VerAutos.php"><input type="button" value="Volver"></a>
+                <div class="botonesExtra">
+                    <a href="VerAutos.php"><input type="button" value="Volver"></a>
+                    <a href="../../../helpers/exportaExcel.php"><input type="button" value="Exportar"></a>
+                </div>
             </div>
         </div>
     </main>

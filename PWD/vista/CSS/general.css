@@ -68,8 +68,48 @@ main {
     justify-content: flex-end;      /* menú alineado a la derecha */
     align-items: center;
     gap: 20px;
-    padding-right: 15px;
-    margin-right: 15%;
+    padding-right: 15%;
+}
+
+/* Estilos para pantallas de 768px de ancho o menos (tablets y celulares) */
+@media (max-width: 768px) {
+
+    header {
+        /* CAMBIO: La dirección cambia a columna para apilar elementos */
+        flex-direction: column; 
+        /* CAMBIO: La altura se ajusta al contenido */
+        height: auto; 
+        max-height: none; /* Quitamos la altura máxima fija */
+        align-items: center; /* Centramos todo */
+        padding: 15px 0;
+    }
+
+    .logo {
+        flex-basis: auto; /* El tamaño se ajusta al contenido */
+        width: 100%; /* Ocupa todo el ancho */
+        margin-right: 0; /* Quitamos el margen */
+        margin-bottom: 10px; /* Añadimos separación abajo */
+        height: 80px; /* Una altura fija para el logo en móvil */
+    }
+
+    .header-right {
+        width: 100%;
+        align-items: center; /* Centra el título y el menú */
+    }
+    
+    .titulo {
+        padding-left: 0;
+        margin-bottom: 15px; /* Separa el título del menú */
+        text-align: center;
+    }
+
+    .menu {
+        /* CAMBIO: Centramos los botones del menú */
+        justify-content: center; 
+        padding-right: 0;
+        /* OPCIONAL: Permite que los botones pasen a la siguiente línea si no caben */
+        flex-wrap: wrap; 
+    }
 }
 
 .menu nav a {

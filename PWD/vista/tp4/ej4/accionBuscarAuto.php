@@ -40,17 +40,25 @@
 
                         <?php
 
-                            // 1. Determinar el protocolo (http o https)
-                            $protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') ? "https://" : "http://";
-
-                            // 2. Obtener el nombre del host (dominio)
-                            $host = $_SERVER['HTTP_HOST'];
-
-                            // 3. Obtener el resto de la URL (la URI con los parámetros GET)
+                            // 1. Obtener el nombre del host (dominio)
+                            // Si la cabecera X-Forwarded-Host existe (enviada por ngrok), úsala.
+                            // Si no, usa la cabecera HTTP_HOST normal.
+                            $host = isset($_SERVER['HTTP_X_FORWARDED_HOST']) ? $_SERVER['HTTP_X_FORWARDED_HOST'] : $_SERVER['HTTP_HOST'];
+                                                
+                            // 2. Determinar el protocolo (http o https)
+                            // Si la cabecera X-Forwarded-Proto existe, úsala.
+                            // Si no, revisa la variable HTTPS como antes.
+                            $protocol = isset($_SERVER['HTTP_X_FORWARDED_PROTO']) ? $_SERVER['HTTP_X_FORWARDED_PROTO'] : ((!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') ? "https" : "http");
+                                                
+                            // 3. Obtener el resto de la URL (esto no cambia)
                             $uri = $_SERVER['REQUEST_URI'];
-
-                            // Unir todo para formar la URL completa
-                            $urlCompleta = $protocol . $host . $uri;
+                                                
+                            // 4. Unir todo para formar la URL completa y pública
+                            $urlCompleta = $protocol . "://" . $host . $uri;
+                                                
+                            // Ahora $urlCompleta contendrá la URL correcta de ngrok
+                            // ej: https://kit-misinterpretable-supermechanically.ngrok-free.dev/vista/tp4/ej4/accionBuscarAuto.php?dominio=POL-968
+                
 
                             // Ahora puedes usar $urlCompleta para generar tu QR
                         ?>

@@ -2,7 +2,7 @@
     session_start();
     $arreglo=$_SESSION['arregloExport'];
 
-    // 1. Importa las clases de PhpSpreadsheet al inicio de tu archivo
+    //Importa las clases de PhpSpreadsheet al inicio de tu archivo
     require __DIR__ . '../../vendor/autoload.php';
     use PhpOffice\PhpSpreadsheet\Spreadsheet;
     use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
@@ -50,16 +50,13 @@
         }
     }
 
-    // 6. Configurar las cabeceras para forzar la descarga
+    //Configurar las cabeceras para forzar la descarga
     $fileName = "Listado de ".$arreglo['tipo']."-".date('Y-m-d').".xlsx";
     header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
     header('Content-Disposition: attachment; filename="' . urlencode($fileName) . '"');
     header('Cache-Control: max-age=0');
-    // 7. Crear el "escritor" y guardar el archivo en la salida del navegador
+    //Crear el "escritor" y guardar el archivo en la salida del navegador
     $writer = new Xlsx($hojaExcel);
     $writer->save('php://output');
-    // 8. ¡Muy importante! Terminar el script.
-    // Esto previene que se ejecute cualquier otro código (como renderizar una vista)
-    // y corrompa el archivo Excel.
     exit;
 ?>

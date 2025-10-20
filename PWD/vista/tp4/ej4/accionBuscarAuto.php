@@ -40,27 +40,22 @@
 
                         <?php
 
-                            // 1. Obtener el nombre del host (dominio)
+                            // Obtener el nombre del host (dominio)
                             // Si la cabecera X-Forwarded-Host existe (enviada por ngrok), la usa
                             // Si no, usa la cabecera HTTP_HOST normal.
                             $host = isset($_SERVER['HTTP_X_FORWARDED_HOST']) ? $_SERVER['HTTP_X_FORWARDED_HOST'] : $_SERVER['HTTP_HOST'];
                                                 
-                            // 2. Determinar el protocolo (http o https)
+                            // Determinar el protocolo (http o https)
                             // Si la cabecera X-Forwarded-Proto existe, la usa
                             // Si no, revisa la variable HTTPS como antes.
                             $protocol = isset($_SERVER['HTTP_X_FORWARDED_PROTO']) ? $_SERVER['HTTP_X_FORWARDED_PROTO'] : ((!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') ? "https" : "http");
                                                 
-                            // 3. Obtener el resto de la URL (esto no cambia)
+                            // Obtener el resto de la URL (esto no cambia)
                             $uri = $_SERVER['REQUEST_URI'];
                                                 
-                            // 4. Unir todo para formar la URL completa y pública
-                            $urlCompleta = $protocol . "://" . $host . $uri;
-                                                
-                            // Ahora $urlCompleta contendrá la URL correcta de ngrok
-                            // ej: https://kit-misinterpretable-supermechanically.ngrok-free.dev/vista/tp4/ej4/accionBuscarAuto.php?dominio=POL-968
-                
+                            // Unir todo para formar la URL completa
+                            $urlCompleta = $protocol."://".$host.$uri;
 
-                            // Ahora puedes usar $urlCompleta para generar tu QR
                         ?>
                             <div id="divQR" style="display: none;">
                                 <h2>Código QR para esta consulta</h2>

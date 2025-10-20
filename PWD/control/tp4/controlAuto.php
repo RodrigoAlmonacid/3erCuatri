@@ -113,4 +113,30 @@
         ];
         return $respuesta;
     }
+
+require __DIR__ . '../../../vendor/autoload.php';
+//libería de qr
+use SimpleSoftwareIO\QrCode\Generator;
+
+function generaQR($texto){
+
+    try {
+        //Crear una INSTANCIA del generador de QR
+        $qrcode = new Generator;
+
+        //Usar el objeto para generar la imagen
+        $imagenQR = $qrcode->format('png')
+                           ->size(300)
+                           ->margin(5)
+                           ->generate($texto);
+
+        //convierto la imagen de binario en una representación de texto plano que usa solo caracteres 
+        //seguros para la web (A-Z, a-z, 0-9, +, / y =).
+        $imagenQR=base64_encode($imagenQR);
+        $qr='data:image/png;base64,'.$imagenQR;
+    } catch (Exception $e) {
+        $qr=null;
+    }
+    return $qr;
+}
 ?>

@@ -170,8 +170,7 @@ class Auto{
         $modifica=false;
         $consulta="UPDATE auto SET ";
         $consulta.="Patente='".$this->getPatente()."', Marca='".$this->getMarca()."', Modelo=".$this->getModelo().", DniDuenio='".$objPersona->getNroDni();
-        $consulta.="' WHERE Patente='".$this->getPatente()."';";    
-        echo $consulta;    
+        $consulta.="' WHERE Patente='".$this->getPatente()."';";        
         if($base->iniciar()){
             if($base->Ejecutar($consulta)){
             $modifica=true;

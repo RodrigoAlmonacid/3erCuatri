@@ -374,3 +374,49 @@ a input[type="button"]:hover {
     align-items: flex-start;
     justify-content: space-around;
 }
+
+.flechas {
+    position: fixed;
+    left: 65%;
+    bottom: 10dvh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    pointer-events: none; /* evita bloquear clics al contenido */
+}
+
+.boton-subir {
+    pointer-events: all; /* vuelve clicables los botones */
+    text-decoration: none;
+    color: white;
+    background: linear-gradient(135deg, #edecec, #ccc);
+    font-size: 1.5rem;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+    transition: all 0.3s ease;
+    opacity: 0.8;
+}
+
+/* Posiciones */
+.arriba {
+    position: absolute;
+    top: 40dvh;
+}
+
+.abajo {
+    position: absolute;
+    top: 50dvh;
+}
+
+/* Efecto hover */
+.boton-subir:hover {
+    transform: scale(1.1);
+    opacity: 1;
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.3);
+}

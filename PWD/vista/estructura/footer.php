@@ -1,4 +1,4 @@
-        <footer class="footer">
+        <footer class="footer" id="bottom">
             <div class="integrantes">
                 <h3>Equipo:</h3>
                 <ul>

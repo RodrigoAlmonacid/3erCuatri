@@ -25,6 +25,10 @@
                         ?>
                         <h1>Hemos encontrado <?=$cantidad?> vehiculos.</h1>
                         <h2>Listado:</h2>
+                        <div class="flechas">
+                            <a href="#top" class="boton-subir arriba" aria-label="Ir arriba">&uarr;</a>
+                            <a href="#bottom" class="boton-subir abajo" aria-label="Ir abajo">&darr;</a>
+                        </div>
                         <?php
                         $arreglo=[];
                         foreach($arregloAutos as $unAuto){

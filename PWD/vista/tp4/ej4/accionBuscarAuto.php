@@ -44,16 +44,6 @@
                         $objPersona=$resultado['objeto']->getObjPersona();
                         $nombre=$objPersona->getNombre();
                         $apellido=$objPersona->getApellido();
-                        if(!empty($_GET['deQR'])){ ?>
-                            <ul>
-                                <li>Patente: <?=$patente?></li>
-                                <li>Marca: <?=$marca?></li>
-                                <li>Modelo: <?=$modelo?></li>
-                                <li>Su dueño es: <?=$nombre?> <?=$apellido?></li>
-                            </ul>
-                        <?php
-                        }
-                        else{
                         ?>
                         <h1>Vehiculo encontrado:</h1>
                         
@@ -80,7 +70,6 @@
                                 <input style="display: none;" type="button" value="Ocultar QR" id="bttOcultar">
                             </div>
                             <?php
-                    }   
                     }
                     else{
                         ?>
